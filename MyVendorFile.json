@@ -1,0 +1,22 @@
+{
+    "name": "My First Vendor File",
+    "description": "This is a vendor file",
+    "tutorial": "https://www.reddit.com/r/lobstor",
+    "support": "https://www.reddit.com/r/lobstor",
+    "website": "https://www.reddit.com/r/lobstor",
+    "packages": [
+        {
+            "manifest": "https://raw.githubusercontent.com/h53h54h55/MyVendor/main/MyManifestFile.json",
+            "description": "This is my first vendor file!"
+        }
+    ],
+    "cacheServers": [
+        "cache.bouncy.cc"
+    ],
+    "defaults": {
+        "packages": [
+            "https://raw.githubusercontent.com/h53h54h55/MyVendor/main/MyManifestFile.json"
+        ],
+        "cacheServer": "cache.bouncy.cc"
+    }
+}
