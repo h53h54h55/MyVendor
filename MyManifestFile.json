@@ -1,0 +1,7 @@
+{
+  "name": "My Package",
+  "id": "My Package v1",
+  "version": 1,
+  "url": "https://raw.githubusercontent.com/h53h54h55/MyVendor/main/MyPackage.json",
+  "type": "express"
+}
