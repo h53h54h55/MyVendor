@@ -1,0 +1,75 @@
+{
+  "_manifest" : {
+    "name": "My Package",
+    "id": "MyPackage-v1",
+    "version": 1,
+    "classPath": "",
+    "permaUrl": "https://raw.githubusercontent.com/h53h54h55/MyVendor/main/Package.json"
+  },
+   "torrentio": {
+    "name": "TORRENTIO",
+    "enabled": true,
+    "languages": ["en"],
+    "base_url": "https://torrentio.strem.fun",
+    "response_type": "json",
+    "movie": {
+      "query": "/stream/movie/{query}.json",
+      "keywords": "{imdbId}"
+    },
+    "episode": {
+      "query": "/stream/series/{query}:{season}:{episode}.json",
+      "keywords": "{showImdbId}"
+    },
+    "json_format": {
+      "results": "streams",
+      "title": "title",
+      "hash": "infoHash"
+    }
+  },
+ "piratebay": {
+      "name": "PIRATEBAY",
+      "enabled": true,
+      "languages": ["en"],
+      "response_type": "text",
+      "base_url": "https://pirateproxylive.org",
+      "fallback_urls": [
+        "https://pirateproxy.live",
+        "https://thepiratebay.party",
+        "https://thepiratebay.org",
+        "https://thepiratebay.fun",
+        "https://thepiratebay.asia",
+        "https://tpb.party",
+        "https://thepiratebay3.org",
+        "https://thehiddenbay.com",
+        "https://piratebay.live",
+        "https://thepiratebay.zone"
+      ],
+      "movie": {
+        "query": "/s/?q={query}&page=0&&video=on&orderby=99",
+        "keywords": "{title} {year}"   
+      },
+      "episode": {
+        "query": "/s/?q={query}&page=0&&video=on&orderby=99",
+        "keywords": ["{title} {episodeCode}", "{title} episode"]
+      },
+      "season": {
+      "query": "/s/?q={query}&page=0&&video=on&orderby=99",
+      "keywords": [
+            "{title} {seasonCode}",
+            "{title} season"
+        ]
+      },
+      "html_parser": {
+        "row": "doc.querySelectorAll('tbody tr')",
+        "peers": "row.querySelector('td:nth-child(7)').textContent",
+        "seeds": "row.querySelector('td:nth-child(6)').textContent",
+        "size": "row.querySelector('td:nth-child(5)').textContent",
+        "title": "row.querySelector('td:nth-child(2)').textContent",
+        "url": "row.querySelector('td:nth-child(4) a').getAttribute('href')"
+      },
+      "title_replacement": {
+        "\"": "",
+        "'s": "s"
+      }
+    }
+}
